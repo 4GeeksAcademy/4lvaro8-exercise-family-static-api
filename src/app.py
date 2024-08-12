@@ -60,7 +60,7 @@ def delete_members(id):
     if response is None:
         return jsonify({"msg": "no se encontró ningún miembro"}), 404
     elif response:
-        return jsonify(response), 200
+        return ({"done": response}), 200
     else:
         return ({"error": "Invalid request"}), 400
 
