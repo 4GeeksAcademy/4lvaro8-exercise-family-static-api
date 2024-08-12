@@ -38,8 +38,10 @@ def get_one_member(id):
     print("El miembro de la familia es", member)
     if member is None:
         return jsonify({"msg": "no se encontró ningún miembro"}), 404
-    return jsonify(member), 200
-  
+    elif member:
+        return jsonify(member), 200
+    else:
+        return ({"error": "Invalid request"}), 400
 
 
 @app.route('/member', methods=['POST'])
